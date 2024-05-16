@@ -1,5 +1,4 @@
-CREATE
-OR REPLACE TABLE srik1981.actors (
+CREATE OR REPLACE TABLE srik1981.actors (
     actor VARCHAR,
     actor_id VARCHAR,
     films ARRAY(

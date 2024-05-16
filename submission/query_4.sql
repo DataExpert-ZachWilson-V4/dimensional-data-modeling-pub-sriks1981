@@ -1,5 +1,5 @@
-INSERT INTO
-    srik1981.actors_history_scd with last_year as (
+INSERT INTO srik1981.actors_history_scd 
+with last_year as (
         select
             actor,
             actor_id,

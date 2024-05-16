@@ -1,5 +1,5 @@
-INSERT INTO
-    srik1981.actors WITH last_year AS (
+INSERT INTO srik1981.actors 
+WITH last_year AS (
         -- CTE for previous year data, this will be empty for the very first time
         SELECT
             *

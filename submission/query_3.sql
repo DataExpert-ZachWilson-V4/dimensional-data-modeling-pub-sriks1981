@@ -1,5 +1,4 @@
-CREATE
-OR REPLACE TABLE srik1981.actors_history_scd (
+CREATE OR REPLACE TABLE srik1981.actors_history_scd (
     actor VARCHAR,
     actor_id VARCHAR,
     quality_class VARCHAR,
