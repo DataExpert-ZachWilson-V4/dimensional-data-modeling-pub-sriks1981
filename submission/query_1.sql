@@ -8,7 +8,7 @@ CREATE OR REPLACE TABLE srik1981.actors (
     films ARRAY(
         ROW(
             -- Release year of the film
-            year INTEGER
+            year INTEGER,
             -- Name of the film
             film VARCHAR,
             -- Number of votes the film received
