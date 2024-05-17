@@ -56,7 +56,7 @@ result_set AS ( -- Calculate the result set to be loaded into the cummulative di
         END AS is_active,
         COALESCE(cy.current_year, ly.current_year + 1) AS current_year
     FROM last_year ly FULL
-        OUTER JOIN current_year cy ON ly.actor = cy.actor
+    OUTER JOIN current_year cy ON ly.actor = cy.actor
 )
 SELECT -- Select the columns for clarifty
     rs.actor,

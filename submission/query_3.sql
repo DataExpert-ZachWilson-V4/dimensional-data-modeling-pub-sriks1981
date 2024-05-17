@@ -14,7 +14,7 @@ CREATE OR REPLACE TABLE srik1981.actors_history_scd (
     -- End year when the combination of (quality_class + is_active) are unique
     -- for the given actor
     end_date INTEGER,
-    -- The year this row represents for this actor
+    -- The year this row represents for the actor
     current_year INTEGER
 ) 
 WITH (

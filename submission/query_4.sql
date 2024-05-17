@@ -6,14 +6,12 @@ WITH last_year AS ( -- CTE to extract the changing dimensions tracked for curren
         quality_class,
         lag(quality_class) OVER (
             PARTITION BY actor
-            ORDER BY
-                current_year
+            ORDER BY current_year
         ) AS prev_quality_class,
         is_active,
         lag(is_active) OVER (
             PARTITION BY actor
-            ORDER BY
-                current_year
+            ORDER BY current_year
         ) AS prev_is_active,
         current_year
     FROM srik1981.actors
