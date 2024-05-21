@@ -16,14 +16,14 @@ combined AS ( -- Prepare the dataset for incremental load
         COALESCE(ly.actor, ty.actor) AS actor,
         COALESCE(ly.actor_id, ty.actor_id) AS actor_id,
         CASE 
-            WHEN ly.quality_class IS NULL OR ty.quality_class <> ly.quality_class THEN 1
-            WHEN ly.is_active IS NULL OR ty.is_active <> ly.is_active THEN 1
+            WHEN ly.quality_class IS NULL OR ty.quality_class <> ly.quality_class OR
+                ly.is_active IS NULL OR ty.is_active <> ly.is_active THEN 1
             ELSE 0
         END AS did_change,
-        ly.quality_class AS l_quality_class,
-        ty.quality_class AS t_quality_class,
-        ly.is_active AS l_is_active,
-        ty.is_active AS t_is_active,
+        ly.quality_class AS quality_class_last_year,
+        ty.quality_class AS quality_class_this_year,
+        ly.is_active AS is_active_last_year,
+        ty.is_active AS is_active_this_year,
         ly.start_date,
         ly.end_date,
         ly.current_year AS last_yr,
@@ -36,8 +36,8 @@ combined AS ( -- Prepare the dataset for incremental load
 SELECT
     actor,
     actor_id,
-    t_quality_class AS quality_class,
-    t_is_active AS is_active,
+    quality_class_this_year AS quality_class,
+    is_active_this_year AS is_active,
     CASE WHEN did_change = 0 THEN start_date ELSE curr_yr END AS start_date,
     curr_yr AS end_date,
     curr_yr AS current_year
