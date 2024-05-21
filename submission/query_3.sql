@@ -16,8 +16,7 @@ CREATE OR REPLACE TABLE srik1981.actors_history_scd (
     end_date INTEGER,
     -- The year this row represents for the actor
     current_year INTEGER
-) 
-WITH (
+) WITH (
     -- Storage format
     format = 'PARQUET',
     -- Partition data by current_year which helps in optimizing query

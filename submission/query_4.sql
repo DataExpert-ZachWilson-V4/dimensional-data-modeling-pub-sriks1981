@@ -38,7 +38,8 @@ result AS ( -- CTE to track if anything changed between previous and current yea
         current_year
     FROM last_year
 )
-SELECT -- Build the final query to be loaded into SCD table
+-- Build the final query to be loaded into SCD table
+SELECT
     DISTINCT actor,
     actor_id,
     quality_class,

@@ -32,7 +32,8 @@ combined AS ( -- Prepare the dataset for incremental load
     FULL OUTER JOIN last_year ly ON ly.actor_id = ty.actor_id
     AND ly.current_year + 1 = ty.current_year
 )
-SELECT -- Final query for clarity
+-- Final query for clarity
+SELECT
     actor,
     actor_id,
     t_quality_class AS quality_class,

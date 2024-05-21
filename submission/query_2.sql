@@ -58,7 +58,8 @@ result_set AS ( -- Calculate the result set to be loaded into the cummulative di
     FROM last_year ly FULL
     OUTER JOIN current_year cy ON ly.actor = cy.actor
 )
-SELECT -- Select the columns for clarifty
+-- Select the columns for clarifty
+SELECT
     rs.actor,
     rs.actor_id,
     rs.films,

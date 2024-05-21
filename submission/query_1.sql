@@ -25,8 +25,7 @@ CREATE OR REPLACE TABLE srik1981.actors (
     is_active BOOLEAN,
     -- The year this row represents for this actor
     current_year INTEGER
-) 
-WITH (
+) WITH (
     -- Storage format
     format = 'PARQUET',
     -- Partition data by current_year which helps in optimizing query
